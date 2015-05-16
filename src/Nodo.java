@@ -17,20 +17,20 @@ public class Nodo
     //Variables
     private Integer valor;
     private String valorArista;
-    private char caracter;
+    private Character caracter;
     private Nodo padre, hijoIzquierdo, hijoDerecho;
     
     //Constructores
     Nodo () 
     {
         this.valor = null;
-        this.caracter = '\u0000';
+        this.caracter = null;
         this.padre = null;
         this.hijoIzquierdo = null;
         this.hijoDerecho = null;
     }
     
-    Nodo (Integer valor, char caracter, Nodo padre, Nodo hijoIzquierdo, Nodo hijoDerecho) 
+    Nodo (Integer valor, Character caracter, Nodo padre, Nodo hijoIzquierdo, Nodo hijoDerecho) 
     {
         this.valor = valor;
         this.caracter = caracter;
@@ -60,12 +60,12 @@ public class Nodo
         return valorArista;
     }
     
-    public void setCaracter(char caracter)
+    public void setCaracter(Character caracter)
     {
         this.caracter = caracter;
     }
     
-    public char getCaracter()
+    public Character getCaracter()
     {
         return caracter;
     }

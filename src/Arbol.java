@@ -82,7 +82,7 @@ public class Arbol
         Nodo newObjNodo = new Nodo();
         
         newValor = nodoIzquierdo.getValor() + nodoDerecho.getValor();
-        newObjNodo = new Nodo(newValor, '\u0000', null, nodoIzquierdo, nodoDerecho);
+        newObjNodo = new Nodo(newValor, null, null, nodoIzquierdo, nodoDerecho);
         
         nodoIzquierdo.setPadre(newObjNodo);
         nodoIzquierdo.setValorCamino("1");

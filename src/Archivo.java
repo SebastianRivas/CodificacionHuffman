@@ -461,5 +461,6 @@ public class Archivo
         }
     }
     
-    public void escribirArchivo() {}
+    public void escribirArchivo(ArrayList <Character> caracteres, ArrayList <String> codigoHuffman) 
+    {}
 }
