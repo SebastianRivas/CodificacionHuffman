@@ -22,6 +22,7 @@ public class main
         objCodificar.cifrar();
         objCodificar.generarCodigoHuffman();
         
-        objCodificar.getObjArchivo().escribirArchivo(objCodificar.getObjArbol(), objCodificar.getCaracteresFinales(), objCodificar.getCodigoHuffman());
+        objCodificar.getObjArchivo().escribirInforme(objCodificar.getObjArbol(), objCodificar.getCaracteresFinales(), objCodificar.getCodigoHuffman());
+        objCodificar.getObjArchivo().escribirArchivo(objCodificar.getCaracteresFinales(), objCodificar.getCodigoHuffman());
     }
 }
