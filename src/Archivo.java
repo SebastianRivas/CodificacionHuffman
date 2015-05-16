@@ -499,229 +499,230 @@ public class Archivo
         }
     }
     
-    public void escribirArchivo(ArrayList <Character> listaCaracteres, ArrayList <String> codigoHuffman) 
+    public void escribirArchivo(ArrayList <Character> caracteres, ArrayList <String> codigoHuffman) 
     {
         Character caracter;
         int asciiCaracter;
-        String lineaArchivo, lineaNuevoArchivo;
+        String lineaArchivo, nuevaLinea;
         
         try 
         {
             setFileReader(new FileReader(getArchivo()));
             setBufferedReader(new BufferedReader(getFileReader()));
             
-            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/" + archivo.getName() + "_hufmman"));
+            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "Hufmman_" + archivo.getName()));
             setPrintWriter(new PrintWriter(getFileWriter()));
             
             while((lineaArchivo = getBufferedReader().readLine()) != null)
             {
-                lineaNuevoArchivo = lineaArchivo;
+                nuevaLinea = "";
+                nuevaLinea = lineaArchivo;
                 
-                for (int i = 0; i < listaCaracteres.size(); i++)
+                for (int j = 0; j < caracteres.size(); j++)
                 {
-                    caracter = listaCaracteres.get(i);
+                    caracter = caracteres.get(j);
                     asciiCaracter = (int) caracter;
                     
                     switch(asciiCaracter)
                     {
                         case 97:
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[a|A]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[a|A]", codigoHuffman.get(j));
                         }; break; //0 ~ A
                         
                         case 98: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[b|B]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[b|B]", codigoHuffman.get(j));
                         }; break; //1 ~ B 
                             
                         case 99: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[c|C]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[c|C]", codigoHuffman.get(j));
                         }; break; //2 ~ C
                             
                         case 100: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[d|D]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[d|D]", codigoHuffman.get(j));
                         }; break; //3 ~ D
                             
                         case 101: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[e|E]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[e|E]", codigoHuffman.get(j));
                         }; break; //4 ~ E
                             
                         case 102: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[f|F]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[f|F]", codigoHuffman.get(j));
                         }; break; //5 ~ F
                             
                         case 103: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[g|G]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[g|G]", codigoHuffman.get(j));
                         }; break; //6 ~ G
                             
                         case 104: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[h|H]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[h|H]", codigoHuffman.get(j));
                         }; break; //7 ~ H
                             
                         case 105: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[i|I]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[i|I]", codigoHuffman.get(j));
                         }; break; //8 ~ I
                             
                         case 106: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[j|J]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[j|J]", codigoHuffman.get(j));
                         }; break; //9 ~ J
                             
                         case 107: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[k|K]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[k|K]", codigoHuffman.get(j));
                         }; break; //10 ~ K
                             
                         case 108: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[l|L]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[l|L]", codigoHuffman.get(j));
                         }; break; //11 ~ L
                             
                         case 109: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[m|M]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[m|M]", codigoHuffman.get(j));
                         }; break; //12 ~ M
                             
                         case 110: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[n|N]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[n|N]", codigoHuffman.get(j));
                         }; break; //13 ~ N
                             
                         case 111: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[o|O]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[o|O]", codigoHuffman.get(j));
                         }; break; //14 ~ O
                             
                         case 112: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[p|P]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[p|P]", codigoHuffman.get(j));
                         }; break; //15 ~ P
                             
                         case 113: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[q|Q]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[q|Q]", codigoHuffman.get(j));
                         }; break; //16 ~ Q
                             
                         case 114: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[r|R]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[r|R]", codigoHuffman.get(j));
                         }; break; //17 ~ R
                             
                         case 115: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[s|S]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[s|S]", codigoHuffman.get(j));
                         }; break; //18 ~ S
                             
                         case 116: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[t|T]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[t|T]", codigoHuffman.get(j));
                         }; break; //19 ~ T
                             
                         case 117: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[u|U]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[u|U]", codigoHuffman.get(j));
                         }; break; //20 ~ U
                             
                         case 118: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[v|V]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[v|V]", codigoHuffman.get(j));
                         }; break; //21 ~ V
                             
                         case 119: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[w|W]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[w|W]", codigoHuffman.get(j));
                         }; break; //22 ~ W
                             
                         case 120: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[x|X]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[x|X]", codigoHuffman.get(j));
                         }; break; //23 ~ X
                             
                         case 121: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[y|Y]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[y|Y]", codigoHuffman.get(j));
                         }; break; //24 ~ Y
                             
                         case 122: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("[z|Z]", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("[z|Z]", codigoHuffman.get(j));
                         }; break; //25 ~ Z
                             
                         case 48: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("0", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("0", codigoHuffman.get(j));
                         }; break; //26 ~ 0
                             
                         case 49: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("1", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("1", codigoHuffman.get(j));
                         }; break; //27 ~ 1
                             
                         case 50: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("2", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("2", codigoHuffman.get(j));
                         }; break; //28 ~ 2
                             
                         case 51: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("3", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("3", codigoHuffman.get(j));
                         }; break; //29 ~ 3
                             
                         case 52: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("4", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("4", codigoHuffman.get(j));
                         }; break; //30 ~ 4
                             
                         case 53: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("5", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("5", codigoHuffman.get(j));
                         }; break; //31 ~ 5
                             
                         case 54: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("6", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("6", codigoHuffman.get(j));
                         }; break; //32 ~ 6
                             
                         case 55: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("7", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("7", codigoHuffman.get(j));
                         }; break; //33 ~ 7
                             
                         case 56: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("8", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("8", codigoHuffman.get(j));
                         }; break; //34 ~ 8
                             
                         case 57: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll("9", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("9", codigoHuffman.get(j));
                         }; break; //35 ~ 9
                             
                         case 46: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll(".", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll("\\.", codigoHuffman.get(j));
                         }; break; //36 ~ .
                             
                         case 32: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll(" ", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll(" ", codigoHuffman.get(j));
                         }; break; //37 ~ ' '
                             
                         case 44: 
                         {
-                            lineaNuevoArchivo = lineaNuevoArchivo.replaceAll(",", codigoHuffman.get(i));
+                            nuevaLinea = nuevaLinea.replaceAll(",", codigoHuffman.get(j));
                         }; break; //38 ~ ,
                     }
                 }
                 
-                getPrintWriter().println(lineaNuevoArchivo);
+                getPrintWriter().println(nuevaLinea);
             }
         }
         
@@ -764,7 +765,7 @@ public class Archivo
         
         try 
         {
-            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/Huffman.txt"));
+            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/Huffman.txt"));
             setPrintWriter(new PrintWriter(getFileWriter()));
             
             getPrintWriter().println("Nodos Creados: " + root.getNumeroNodos());

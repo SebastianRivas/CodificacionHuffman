@@ -18,7 +18,7 @@ public class main
     {
         Codificar objCodificar;
         
-        objCodificar = new Codificar("/home/android/NetBeansProjects/Proyecto_Fada/src/laptop.txt");
+        objCodificar = new Codificar("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/caperusitaRoja.txt");
         objCodificar.cifrar();
         objCodificar.generarCodigoHuffman();
         
