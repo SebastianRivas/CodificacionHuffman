@@ -95,7 +95,7 @@ public class Arbol
         return newObjNodo;
     }
     
-    public int conteoNodos(Nodo root) 
+    public void conteoNodos(Nodo root) 
     {
         if (root != null) 
         {
@@ -105,7 +105,21 @@ public class Arbol
             conteoNodos(root.getHijoDerecho());
         }
         
-        return this.numeroNodos;
+        setNumeroNodos(numeroNodos);
+    }
+    
+    public void altura(Nodo root, int nivelActual) 
+    {
+        if (root != null)
+        {
+            if (nivelActual > this.altura)
+            {
+                this.altura = nivelActual;
+            }
+            
+            altura(root.getHijoIzquierdo(), nivelActual + 1);
+            altura(root.getHijoDerecho(), nivelActual + 1);
+        }
     }
     
     public void generarListaHojas(Nodo root) 
@@ -119,20 +133,6 @@ public class Arbol
         {
             generarListaHojas(root.getHijoIzquierdo());
             generarListaHojas(root.getHijoDerecho());
-        }
-    }
-    
-    public void altura (Nodo root, int nivelActual) 
-    {
-        if (root != null)
-        {
-            if (nivelActual > this.altura)
-            {
-                this.altura = nivelActual;
-            }
-            
-            altura(root.getHijoIzquierdo(), nivelActual + 1);
-            altura(root.getHijoDerecho(), nivelActual + 1);
         }
     }
     

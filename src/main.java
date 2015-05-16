@@ -18,8 +18,10 @@ public class main
     {
         Codificar objCodificar;
         
-        objCodificar = new Codificar("/home/android/NetBeansProjects/FADA/src/laptop.txt");
+        objCodificar = new Codificar("/home/android/NetBeansProjects/Proyecto_Fada/src/laptop.txt");
         objCodificar.cifrar();
         objCodificar.generarCodigoHuffman();
+        
+        objCodificar.getObjArchivo().escribirArchivo(objCodificar.getObjArbol(), objCodificar.getCaracteresFinales(), objCodificar.getCodigoHuffman());
     }
 }

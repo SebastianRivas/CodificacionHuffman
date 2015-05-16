@@ -19,7 +19,9 @@ public class Archivo
 {
     private File archivo;
     private FileReader fileReader;
+    private FileWriter fileWriter;
     private BufferedReader bufferedReader;
+    private PrintWriter printWriter;
     private ArrayList <Character> listaCaracteres;
     private ArrayList <Integer> conteoCaracter;
     private String diccionario = "abcdefghijklmnopqrstuvwxyz0123456789. ,";
@@ -61,6 +63,16 @@ public class Archivo
         return fileReader;
     }
     
+    public void setFileWriter(FileWriter fileWriter) 
+    {
+        this.fileWriter = fileWriter;
+    }
+    
+    public FileWriter getFileWriter() 
+    {
+        return fileWriter;
+    }
+    
     public void setBufferedReader(BufferedReader bufferedReader) 
     {
         this.bufferedReader = bufferedReader;
@@ -69,6 +81,16 @@ public class Archivo
     public BufferedReader getBufferedReader() 
     {
         return bufferedReader;
+    }
+    
+    public void setPrintWriter (PrintWriter printWriter) 
+    {
+        this.printWriter = printWriter;
+    }
+    
+    public PrintWriter getPrintWriter() 
+    {
+        return printWriter;
     }
     
     public ArrayList <Character> getListaCaracteres() 
@@ -459,8 +481,69 @@ public class Archivo
         {
             System.err.println(e.getMessage());
         }
+        
+        finally 
+        {
+            try
+            {
+                if (getFileReader() != null) 
+                {
+                    getFileReader().close();
+                }
+            }
+            
+            catch (Exception e) 
+            {
+                System.err.println(e.getMessage());
+            }
+        }
     }
     
-    public void escribirArchivo(ArrayList <Character> caracteres, ArrayList <String> codigoHuffman) 
-    {}
+    public void escribirArchivo(Arbol root, ArrayList <Character> caracteres, ArrayList <String> codigoHuffman) 
+    {
+        root.altura(root.getRoot(), 1);
+        root.conteoNodos(root.getRoot());
+        
+        try 
+        {
+            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/Huffman.txt"));
+            setPrintWriter(new PrintWriter(getFileWriter()));
+            
+            getPrintWriter().println("Nodos Creados: " + root.getNumeroNodos());
+            getPrintWriter().println("Profundidad Maxima del Arbol Generado: " + root.getAltura());
+            getPrintWriter().println("Tabla de Codificacion Generada:");
+            getPrintWriter().println("Simbolo ---------- Codigo");
+            
+            for (int i = 0; i < caracteres.size(); i++)
+            {
+                getPrintWriter().format("%s ---------- %s\n", caracteres.get(i), codigoHuffman.get(i));
+            }
+        }
+        
+        catch(IOException ioe)
+        {
+            System.err.println(ioe.getMessage());
+        }
+        
+        catch(Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
+        
+        finally
+        {
+            try
+            {
+                if (getFileWriter() != null)
+                {
+                    getFileWriter().close();
+                }
+            }
+            
+            catch (Exception e) 
+            {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
 }
