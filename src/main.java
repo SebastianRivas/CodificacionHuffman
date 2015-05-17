@@ -16,13 +16,13 @@ public class main
 {
     public static void main (String args[])
     {
-        Codificar objCodificar;
+        CodificacionHuffman objCodificacionHuffman;
         
-        objCodificar = new Codificar("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/laptop.txt");
-        objCodificar.cifrarHuffman();
-        objCodificar.generarCodigoHuffman();
+        objCodificacionHuffman = new CodificacionHuffman("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/laptop.txt");
+        objCodificacionHuffman.cifrarHuffman();
+        objCodificacionHuffman.generarCodigoHuffman();
         
-        objCodificar.getObjArchivo().escribirInforme(objCodificar.getObjArbol(), objCodificar.getCaracteresFinales(), objCodificar.getCodigoHuffman());
-        objCodificar.getObjArchivo().escribirArchivoHuffman(objCodificar.getCaracteresFinales(), objCodificar.getCodigoHuffman());
+        objCodificacionHuffman.getObjArchivo().escribirInforme(objCodificacionHuffman.getObjArbol(), objCodificacionHuffman.getCaracteresFinales(), objCodificacionHuffman.getCodigoHuffman());
+        objCodificacionHuffman.getObjArchivo().escribirArchivoHuffman(objCodificacionHuffman.getCaracteresFinales(), objCodificacionHuffman.getCodigoHuffman());
     }
 }

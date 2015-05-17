@@ -14,7 +14,7 @@
 
 import java.util.*;
 
-public class Codificar 
+public class CodificacionHuffman 
 {
     private Archivo objArchivo;
     private Lista objLista;
@@ -22,7 +22,7 @@ public class Codificar
     private ArrayList <Character> caracteresFinales;
     private ArrayList <String> codigoHuffman;
     
-    public Codificar(String path)
+    public CodificacionHuffman(String path)
     {
         objArchivo = new Archivo(path);
         objLista = new Lista();
@@ -132,56 +132,5 @@ public class Codificar
             
             getCodigoHuffman().add(huffmanCode);
         }
-    }
-    
-    public String completar8Bits(String cadena) 
-    {
-        int longitudCadena, bitsFaltantes;
-        
-        longitudCadena = cadena.length();
-        
-        if (longitudCadena % 8 != 0)
-        {
-            bitsFaltantes = 8 - longitudCadena % 8;
-            
-            for (int i = 0; i < bitsFaltantes; i++)
-            {
-                cadena += "0";
-            }
-        }
-        
-        return cadena;
-    }
-    
-    public int generarAscii(String cadena)
-    {
-        int Ascii, potencia, valorBite;
-        String lineaAscii;
-        
-        Ascii = 0;
-        valorBite = 0;
-        
-        if (cadena.length() < 8) 
-        {
-            lineaAscii = completar8Bits(cadena);
-        }
-        
-        else 
-        {
-            lineaAscii = cadena;
-        }
-        
-        for (int i = 0; i < lineaAscii.length(); i++) 
-        {
-            valorBite = Integer.parseInt(String.valueOf(lineaAscii.charAt(i)));
-            
-            if (valorBite == 1) 
-            {
-                potencia = (int) Math.pow(2, i);
-                Ascii += potencia;
-            }
-        }
-        
-        return Ascii;
     }
 }

@@ -25,6 +25,7 @@ public class Archivo
     private ArrayList <Character> listaCaracteres;
     private ArrayList <Integer> conteoCaracter;
     private String diccionario = "abcdefghijklmnopqrstuvwxyz0123456789. ,";
+    private ProcesarStrings objProcesarStrings;
     
     Archivo (String path) 
     {
@@ -33,16 +34,6 @@ public class Archivo
     }
     
     //Metodos Set's y Get's
-    public void setDiccionario(String diccionario) 
-    {
-        this.diccionario = diccionario;
-    }
-    
-    public String getDiccionario() 
-    {
-        return diccionario;
-    }
-    
     public void setArchivo(File archivo) 
     {
         this.archivo = archivo;
@@ -111,6 +102,26 @@ public class Archivo
     public void setConteoCaracter(ArrayList <Integer> conteo) 
     {
         this.conteoCaracter = conteo;
+    }
+    
+    public void setDiccionario(String diccionario) 
+    {
+        this.diccionario = diccionario;
+    }
+    
+    public String getDiccionario() 
+    {
+        return diccionario;
+    }
+    
+    public void setObjProcesarStrings(ProcesarStrings objProcesarStrings)
+    {
+        this.objProcesarStrings = objProcesarStrings;
+    }
+    
+    public ProcesarStrings getObjProcesarStrings()
+    {
+        return objProcesarStrings;
     }
     
     public void initArray()
@@ -502,7 +513,7 @@ public class Archivo
     public void escribirArchivoHuffman(ArrayList <Character> caracteres, ArrayList <String> codigoHuffman) 
     {
         Character caracter;
-        int indexCaracter, asciiCaracter;
+        int indexCaracter;
         String lineaArchivo, nuevaLinea;
         
         try 
@@ -525,6 +536,58 @@ public class Archivo
                     nuevaLinea += codigoHuffman.get(indexCaracter);
                 }
                 
+                getPrintWriter().println(nuevaLinea);
+            }
+        }
+        
+        catch(FileNotFoundException fnfe)
+        {
+            System.err.println(fnfe.getMessage());
+        }
+        
+        catch(IOException ioe)
+        {
+            System.err.println(ioe.getMessage());
+        }
+        
+        catch(Exception e)
+        {
+            System.err.println(e.getMessage());
+        }
+        
+        finally
+        {
+            try
+            {
+                if (getFileWriter() != null)
+                {
+                    getFileWriter().close();
+                }
+            }
+            
+            catch (Exception e) 
+            {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+    
+    public void escribirArchivoAscii() 
+    {
+        String lineaArchivo, nuevaLinea;
+        objProcesarStrings = new ProcesarStrings();
+        
+        try 
+        {
+            setFileReader(new FileReader(getArchivo()));
+            setBufferedReader(new BufferedReader(getFileReader()));
+            
+            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "ASCII_" + archivo.getName()));
+            setPrintWriter(new PrintWriter(getFileWriter()));
+            
+            while((lineaArchivo = getBufferedReader().readLine()) != null)
+            {
+                nuevaLinea = "";
                 getPrintWriter().println(nuevaLinea);
             }
         }
