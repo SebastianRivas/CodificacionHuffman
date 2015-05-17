@@ -91,7 +91,7 @@ public class Codificar
         objLista.ordenarLista();
     }
     
-    public void cifrar()
+    public void cifrarHuffman()
     {
         Nodo objNodo;
         
@@ -133,4 +133,6 @@ public class Codificar
             getCodigoHuffman().add(huffmanCode);
         }
     }
+    
+    public void generarAscii(){}
 }
