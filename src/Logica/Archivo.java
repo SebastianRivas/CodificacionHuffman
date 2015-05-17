@@ -522,7 +522,7 @@ public class Archivo
             setFileReader(new FileReader(getArchivo()));
             setBufferedReader(new BufferedReader(getFileReader()));
             
-            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "Huffman_" + archivo.getName()));
+            setFileWriter(new FileWriter("src/txt/" + "Huffman_" + archivo.getName()));
             setPrintWriter(new PrintWriter(getFileWriter()));
             
             while((lineaArchivo = getBufferedReader().readLine()) != null)
@@ -580,10 +580,10 @@ public class Archivo
         
         try 
         {
-            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "ASCII_" + archivo.getName()));
+            setFileWriter(new FileWriter("src/txt/" + "ASCII_" + archivo.getName()));
             setPrintWriter(new PrintWriter(getFileWriter()));
             
-            setArchivo(new File("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "Huffman_" + archivo.getName()));
+            setArchivo(new File("src/txt/" + "Huffman_" + archivo.getName()));
             setFileReader(new FileReader(getArchivo()));
             setBufferedReader(new BufferedReader(getFileReader()));
             
@@ -646,17 +646,17 @@ public class Archivo
         
         try 
         {
-            setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/Huffman.txt"));
+            setFileWriter(new FileWriter("src/txt/Huffman.txt"));
             setPrintWriter(new PrintWriter(getFileWriter()));
             
             getPrintWriter().println("Nodos Creados: " + root.getNumeroNodos());
             getPrintWriter().println("Profundidad Maxima del Arbol Generado: " + root.getAltura());
             getPrintWriter().println("Tabla de Codificacion Generada:");
-            getPrintWriter().println("Simbolo ---------- Codigo");
+            getPrintWriter().println("\t Simbolo ---------- Codigo");
             
             for (int i = 0; i < caracteres.size(); i++)
             {
-                getPrintWriter().format("%s ---------- %s\n", caracteres.get(i), codigoHuffman.get(i));
+                getPrintWriter().format("\t %s ---------- %s\n", caracteres.get(i), codigoHuffman.get(i));
             }
         }
         

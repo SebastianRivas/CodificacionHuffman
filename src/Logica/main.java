@@ -20,7 +20,7 @@ public class main
     {
         CodificacionHuffman objCodificacionHuffman;
         
-        objCodificacionHuffman = new CodificacionHuffman("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/laptop.txt");
+        objCodificacionHuffman = new CodificacionHuffman("src/txt/laptop.txt");
         objCodificacionHuffman.cifrarHuffman();
         objCodificacionHuffman.generarCodigoHuffman();
         
