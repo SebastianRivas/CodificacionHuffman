@@ -135,22 +135,4 @@ public class Arbol
             generarListaHojas(root.getHijoDerecho());
         }
     }
-    
-    //+-----------------------------------------------+
-    //+             ZONA DE PRUEBAS                   +
-    //+-----------------------------------------------+
-    
-    public void mostrar(Nodo tree)
-    {
-        if (tree != null) 
-        {
-            mostrar(tree.getHijoIzquierdo());
-            
-            System.out.println("+-------------------------------------------+");
-            System.out.println("+ Caracter: " + tree.getCaracter() + " Valor: " + tree.getValor() + " Valor Arista " + tree.getValorCamino());
-            System.out.println("+-------------------------------------------+");
-            
-            mostrar(tree.getHijoDerecho());
-        }
-    }
 }
