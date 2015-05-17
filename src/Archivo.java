@@ -574,21 +574,36 @@ public class Archivo
     
     public void escribirArchivoAscii() 
     {
-        String lineaArchivo, nuevaLinea;
-        objProcesarStrings = new ProcesarStrings();
+        int indexInicial, indexFinal;
+        String lineaArchivo, lineaArchivo8Bits, nuevaLinea;
         
         try 
         {
-            setFileReader(new FileReader(getArchivo()));
-            setBufferedReader(new BufferedReader(getFileReader()));
+            objProcesarStrings = new ProcesarStrings();
             
             setFileWriter(new FileWriter("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "ASCII_" + archivo.getName()));
             setPrintWriter(new PrintWriter(getFileWriter()));
             
+            setArchivo(new File("/home/android/NetBeansProjects/Proyecto_Fada/src/txt/" + "Huffman_" + archivo.getName()));
+            setFileReader(new FileReader(getArchivo()));
+            setBufferedReader(new BufferedReader(getFileReader()));
+            
             while((lineaArchivo = getBufferedReader().readLine()) != null)
             {
+                indexInicial = 0;
+                indexFinal = 0;
+                
                 nuevaLinea = "";
-                getPrintWriter().println(nuevaLinea);
+                lineaArchivo8Bits = objProcesarStrings.completar8Bits(lineaArchivo);
+                
+                while (indexInicial < lineaArchivo.length())
+                {
+                    indexFinal = indexInicial + 8;
+                    nuevaLinea = lineaArchivo8Bits.substring(indexInicial, indexFinal);
+                    getPrintWriter().println(objProcesarStrings.generarAscii(nuevaLinea));
+                    //getPrintWriter().println((char) objProcesarStrings.generarAscii(nuevaLinea));
+                    indexInicial = indexFinal;
+                }
             }
         }
         

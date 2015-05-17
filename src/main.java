@@ -24,5 +24,6 @@ public class main
         
         objCodificacionHuffman.getObjArchivo().escribirInforme(objCodificacionHuffman.getObjArbol(), objCodificacionHuffman.getCaracteresFinales(), objCodificacionHuffman.getCodigoHuffman());
         objCodificacionHuffman.getObjArchivo().escribirArchivoHuffman(objCodificacionHuffman.getCaracteresFinales(), objCodificacionHuffman.getCodigoHuffman());
+        objCodificacionHuffman.getObjArchivo().escribirArchivoAscii();
     }
 }
