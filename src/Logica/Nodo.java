@@ -12,6 +12,8 @@
  *  Colaboracion:
  */
 
+package Logica;
+
 public class Nodo 
 {
     //Variables

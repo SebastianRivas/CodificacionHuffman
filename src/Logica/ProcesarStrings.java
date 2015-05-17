@@ -12,6 +12,8 @@
  *  Colaboracion:
  */
 
+package Logica;
+
 public class ProcesarStrings
 {
     public String completar8Bits(String cadena) 
