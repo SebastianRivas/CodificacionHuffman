@@ -520,11 +520,11 @@ public class Archivo
         
         try 
         {
-            setFileReader(new FileReader(getArchivo()));
-            setBufferedReader(new BufferedReader(getFileReader()));
-            
             setFileWriter(new FileWriter("src/txt/" + "Huffman_" + archivo.getName()));
             setPrintWriter(new PrintWriter(getFileWriter()));
+            
+            setFileReader(new FileReader(getArchivo()));
+            setBufferedReader(new BufferedReader(getFileReader()));
             
             while((lineaArchivo = getBufferedReader().readLine()) != null)
             {
