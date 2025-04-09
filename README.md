@@ -57,12 +57,13 @@ Este proyecto tiene una implementación en el lenguaje de programación JAVA del
 ## EJECUCION DEL PROYECTO ⌨️
 ⚠️ La compilacion y posterior ejecucion del proyecto se debe hacer desde la raiz del proyecto ⚠️
 
-⚠️ La salida del programa ⚠️
+⚠️ La salida del programa se almacena en ⚠️
 ```bash
 src/main/java/com/fada/CodificacionHuffman/output/text
 ```
 
-* Compilacion y ejecucucion
+* Compilacion y ejecucion
+
 Compilacion
 ```bash
     javac -d bin/classes/ src/main/java/com/fada/CodificacionHuffman/app/logica/*.java src/main/java/com/fada/CodificacionHuffman/app/gui/*.java src/main/java/com/fada/CodificacionHuffman/app/*.java
@@ -72,8 +73,9 @@ Ejecucion
     java -cp bin/classes/ com.fada.CodificacionHuffman.app.App
 ```
 
-* Creacion de JAR
-Construccion de JAR
+* Creacion del fichero JAR
+
+Construccion del JAR
 ```bash
     jar -cmfv build/MANIFEST.MF build/CodificacionHuffman-1.0-SNAPSHOT.jar -C bin/classes .
 ```
