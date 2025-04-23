@@ -1,7 +1,9 @@
 # CODIFICACION HUFFMAN (JAVA)
+
 Este proyecto tiene una implementación en el lenguaje de programación JAVA del algoritmo de compresión de datos llamado Codificación Huffman.
 
 ## ESTRUCTURA DE DIRECCTORIOS 🗂️
+
 ```bash
     .
     ├── bin
@@ -55,31 +57,39 @@ Este proyecto tiene una implementación en el lenguaje de programación JAVA del
 ```
 
 ## EJECUCION DEL PROYECTO ⌨️
+
 ⚠️ La compilacion y posterior ejecucion del proyecto se debe hacer desde la raiz del proyecto ⚠️
 
 ⚠️ La salida del programa se almacena en ⚠️
+
 ```bash
 src/main/java/com/fada/CodificacionHuffman/output/text
 ```
 
-* Compilacion y ejecucion
+- Compilacion y ejecucion
 
 Compilacion
+
 ```bash
     javac -d bin/classes/ src/main/java/com/fada/CodificacionHuffman/app/logica/*.java src/main/java/com/fada/CodificacionHuffman/app/gui/*.java src/main/java/com/fada/CodificacionHuffman/app/*.java
 ```
+
 Ejecucion
+
 ```bash
     java -cp bin/classes/ com.fada.CodificacionHuffman.app.App
 ```
 
-* Creacion del fichero JAR
+- Creacion del fichero JAR
 
 Construccion del JAR
+
 ```bash
     jar -cmfv build/MANIFEST.MF build/CodificacionHuffman-1.0-SNAPSHOT.jar -C bin/classes .
 ```
+
 Ejecucion del JAR
+
 ```bash
     java -jar build/CodificacionHuffman-1.0-SNAPSHOT.jar
 ```
